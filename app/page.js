@@ -1,11 +1,9 @@
 'use client'
-import Image from "next/image";
-import { Assistant } from "next/font/google";
-import getStripe from "@/utils/get-stripe";
+
+import getStripe from "../utils/get-stripe";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { AppBar, Container, Toolbar, Typography, Button, Box, Grid, Paper } from "@mui/material";
 import Head from 'next/head';
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -200,8 +198,28 @@ export default function Home() {
 
       <Box sx={{my: 6, textAlign: 'center'}}>
       <Typography variant="h4" gutterBottom>Pricing</Typography>
-      <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+        <Grid container spacing={4}>
+          <Grid item xs={3} md={4}>
+            <Box sx={{
+              p: 3,
+              border: '1px Solid',
+              borderColor: 'grey.300',
+              borderRadius: 2,
+              backgroundColor: '#ffffff', // Card background color
+              boxShadow: 2,
+            }}>
+              <Typography variant="h5" gutterBottom> Trial </Typography>
+              <Typography variant="h6" gutterBottom> Free trial </Typography>
+              <Typography>
+                {' '}
+                Have a trial of how the generate flashcard works
+              </Typography>
+              <Button variant="contained" sx={{ mt: 2, backgroundColor: '#f0a500', '&:hover': { backgroundColor: '#d48f00' } }} href="/generate">
+                Trial
+              </Button>
+            </Box>
+          </Grid>
+          <Grid item xs={3} md={4}>
             <Box sx={{
               p: 3,
               border: '1px Solid',
@@ -221,7 +239,7 @@ export default function Home() {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={3} md={4}>
             <Box sx={{
               p: 3,
               border: '1px Solid',
