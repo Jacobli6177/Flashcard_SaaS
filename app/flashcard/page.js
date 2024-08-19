@@ -3,7 +3,7 @@ import React from "react"
 import { useUser } from "@clerk/nextjs"
 import { useEffect, useState } from "react"
 import { collection, doc, getDocs } from "firebase/firestore"
-import { db } from "@/firebase"
+import { db } from "../../firebase"
 import { Box, Card, CardActionArea, CardContent, Container, Grid, Typography } from "@mui/material"
 
 

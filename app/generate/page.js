@@ -1,7 +1,7 @@
 'use client'
 
 import { useUser } from "@clerk/nextjs"
-import { db } from "@/firebase"
+import { db } from  '../../firebase'
 import { Box, Button, Card, CardActionArea, CardContent, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, Paper, TextField, Typography } from "@mui/material"
 import { useState } from "react"
 import { useRouter } from "next/navigation"

@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import React from 'react'
-import { node } from 'globals'
 
 const formatAmountForStripe = (amount, currency) => {
     return Math.round(amount * 100)
    }
 
-var process = node.process   
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 export async function POST(req) {
